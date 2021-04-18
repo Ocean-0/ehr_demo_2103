@@ -1,0 +1,97 @@
+.uResume-container{
+    min-height: 620px;
+    background-color: #f9f9fc;
+}
+
+.uResume-container>div{
+    height: auto;
+    width: 1000px;
+    margin: 10px auto;
+    /* border: 1px rgb(204, 204, 204) solid; */
+}
+
+.uResume-g{
+    display: inline-block;
+    height: auto;
+    background-color: #fff;
+    margin: 0 3px;
+    border-radius: 15px;
+    border-left: 1px rgb(209, 208, 208) solid;
+    border-top: 1px rgb(209, 208, 208) solid;
+    border-right: 2px rgb(175, 173, 173) solid;
+    border-bottom: 2px rgb(175, 173, 173) solid;
+    box-shadow: rgb(218, 218, 218) 1px 1px 5px 2px;
+    /* 有内容的div下沉 */
+    vertical-align: top;
+
+}
+.uResume-l{
+    width: 25%;
+    min-height: 500px;
+    /* border: 1px green solid; */
+}
+.uResume-r{    
+    width: calc(100% - 25% - 20px);
+    min-height: 600px;
+    /* border: 1px blue solid; */
+}
+.uResume-r>h1{
+    color: rgb(90, 90, 90);
+    font-size: 16px;
+    margin: 0 40px;
+    line-height: 45px;
+    border-bottom: 2px rgb(175, 173, 173) solid;
+} 
+.uResume-r>h1:nth-of-type(1)::after{
+    content: '(必填)';
+    color: red;
+    font-size: 10px;
+}
+.uResume-r>h1:nth-of-type(1){
+    width: 300px;
+    /* border: 1px red solid; */
+}
+.uResume-r>div{
+    margin-left: 60px;
+    /* border: 1px red solid; */
+}
+.uResume-r>div>label{
+    display: inline-block;
+    margin: 3px 0;
+    width: 85px;
+    height: auto;
+    /* border: 1px red solid; */
+}
+.uResume-r>div>label::after{
+    content: ':';
+}
+.uResume-r>div>input[type="text"]{
+    outline: none;
+    caret-color: rgb(209, 208, 208) ;
+    border: none;
+    border-bottom: 2px rgb(209, 208, 208) solid;
+}
+
+.uResume-r-file{
+    width: 200px;
+    height: 200px;
+    border: 1px red solid;
+    float: right;
+    margin-top: 50px;
+    margin-right: 100px;
+    /* position: absolute;
+    top: 130px;
+    right: 360px; */
+    /* top: -500px;
+    right: -400px; */
+}
+.uResume-r-file>a{
+    width: 100px;
+    height: 10px;
+    background: greenyellow;
+    border: 1px black solid;
+}
+.uResume-r-file>a>input{
+    width: 130px;
+    border: 1px red solid;
+}

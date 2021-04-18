@@ -1,0 +1,84 @@
+.process-container{
+    min-height: 620px;
+    background-color: #f9f9fc;
+}
+
+.process-container>div{
+    height: auto;
+    width: 1000px;
+    margin: 10px auto;
+    /* border: 1px rgb(204, 204, 204) solid; */
+}
+
+.process-g{
+    display: inline-block;
+    height: auto;
+    background-color: #fff;
+    margin: 0 3px;
+    border-left: 1px rgb(209, 208, 208) solid;
+    border-top: 1px rgb(209, 208, 208) solid;
+    border-right: 2px rgb(175, 173, 173) solid;
+    border-bottom: 2px rgb(175, 173, 173) solid;
+    box-shadow: rgb(218, 218, 218) 1px 1px 5px 2px;
+    /* 有内容的div下沉 */
+    vertical-align: top;
+}
+.process-l{
+    width: 25%;
+    min-height: 500px;
+    /* border: 1px green solid; */
+}
+.process-r{    
+    width: calc(100% - 25% - 20px);
+    min-height: 600px;
+    /* border: 1px blue solid; */
+}
+
+/* ChooseNotice */
+.process-l-n>div{
+    height: 50px;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+    border-bottom: 1px rgb(223, 222, 222) dashed;
+}
+#tabList{
+    height: 140px;
+}
+#tabList>span{
+    display: block;
+}
+
+
+
+
+.process-r-c{
+    margin-left: 20px;
+    margin-bottom: 30px;
+    /* border: 1px red solid; */
+}
+.process-r-c>h1{
+    font-size: 19px;
+}
+.process-r-c>p{
+    line-height: 10px;
+    font-size: 13px;
+
+}
+
+/* problem */
+.process-r-problem>h1{
+    font-size: 19px;
+}
+.process-r-problem>h2{
+    font-size: 13px;
+}
+.process-r-problem>p{
+    font-size: 10px;
+    text-indent: 20px;
+}
+.process-r-problem>h1,
+.process-r-problem>h2,
+.process-r-problem>p{
+    margin-left: 20px;
+}

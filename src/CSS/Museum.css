@@ -1,0 +1,74 @@
+.museum-container{
+    min-height: 660px;
+}
+.museum-g{
+    display: flex;
+    justify-content: space-around;
+    /* justify-content: center; */
+    align-items: center;
+
+}
+.museum-1{
+    background: rgba(20, 5, 5);
+    height: 660px;
+    color: #fff;
+}
+
+
+.museum-1-l{
+    width: 500px;
+    height: 300px;
+
+}
+.museum-1-l>h1{
+    line-height: 50px;
+    animation-name: fadeinT;
+    animation-duration: .7s;
+}
+.museum-1-l>h1>span{
+    font-size: 80px;
+    color: red;
+}
+.museum-1-l>p{
+    font-size: 20px;
+    animation-name: fadeinT;
+    animation-duration: .7s;
+}
+
+
+.museum-2{
+    height: 500px;
+    background: #f8f8f8;
+    text-align: center;
+    display: flex;
+    flex-direction: column ;
+    justify-content: space-around;
+    align-items: center;
+}
+.museum-2-l{
+    opacity: 0;
+}
+.museum-2-l>h1>span{
+    font-size: 80px;
+    color: #1e1e1e;
+}
+
+/* .museum-2-l>h1,.museum-2-l>p{
+    animation-name: fastLeftIn;
+    animation-duration: .5s;
+} */
+
+
+.museum-3{
+    height: 500px;
+    background: #69a5a4;
+}
+.museum-3-l>h1>span{
+    font-size: 80px;
+    color: #f8f8f8;        
+}
+/* .museum-3-l>p{        
+    -webkit-transform: translateY(-100px);
+
+} */
+

@@ -1,0 +1,104 @@
+.-fadeinT{
+    animation-name: fadeinT;
+    animation-duration: .7s;
+}
+@keyframes fadeinT {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(30px);
+    }
+    50% {
+        opacity: 0.3;
+        -webkit-transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
+.-fastLeftIn{
+    animation-name: fastLeftIn;
+    animation-duration: .5s;
+}
+@keyframes fastLeftIn {
+    0% {
+        opacity: 0;
+        font-style: italic;
+        -webkit-transform: translateX(-200px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+
+.-inputBounce{
+    animation-name: inputBounce ;
+    animation-duration: .7s ;
+    /* animation-iteration-count:infinite; */
+    /* animation-name: inputBounce !important ;
+    animation-duration: .7s !important ; */
+}
+@keyframes inputBounce{
+    0% {
+        background: rgb(233, 117, 117);
+        -webkit-transform: translateX(0px);
+    }
+    20% {
+        background: rgb(233, 117, 117);
+        -webkit-transform: translateX(-15px);
+    }
+    40% {
+        background: rgb(233, 117, 117);
+        -webkit-transform: translateX(15px);
+    }
+    60% {
+        background: rgb(233, 117, 117);
+        -webkit-transform: translateX(-15px);
+    }
+    80% {
+        background: rgb(233, 117, 117);
+        -webkit-transform: translateX(15px);
+    }
+    100% {
+        -webkit-transform: translateX(0px);
+    }
+
+}
+
+.-wordBeatFirst{
+    display: inline-block;
+    animation-name: wordBeatFirst ;
+    animation-duration: .4s ;
+}
+@keyframes wordBeatFirst{
+    0% {
+        -webkit-transform: translateY(0px);
+    }
+    33% {
+        -webkit-transform: translateY(-25px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+
+}
+
+.-wordBeatSecond{    
+    display: inline-block;
+    animation-name: wordBeatSecond ;
+    animation-duration: .5s ;
+}
+@keyframes wordBeatSecond{
+    0% {
+        -webkit-transform: translateY(0px);
+    }
+    66% {
+        -webkit-transform: translateY(-25px);
+    }
+    100% {
+        -webkit-transform: translateY(0);
+    }
+
+}

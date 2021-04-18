@@ -1,0 +1,44 @@
+.home-container{
+    min-height: 665px;
+    background-color: #f9f9fc;
+    background: url('../IMG/arrows-bg.jpg') no-repeat;
+    background-size: 1520px 990px;
+    /* border: 1px red solid; */
+}
+.home-container>div{
+    height: 100px;
+    text-align: center;
+    /* margin-top: 300px; */
+    /* border: 1px red solid; */
+
+}
+
+#homeInput{
+    display: inline-block;
+    margin: 250px 600px;
+    width: 290px;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    /* caret-color: rgb(209, 208, 208) ; */
+    border: none;
+    background: rgba(151, 151, 151, 0.384);
+    /* line-height: 30px; */
+    font-size: 15px;
+    text-align: center;
+
+}
+
+
+video{
+    width: 1520px;
+    object-fit: contain;
+    /*加滤镜*/
+    /*背景模糊设置 */
+    filter: blur(15px); 
+    /*背景灰度设置  */
+    -webkit-filter: saturate (80%);  
+     filter:saturate (80%); 
+    /* -webkit-filter: grayscale(80%);  
+     filter:grayscale(80%);  */
+}

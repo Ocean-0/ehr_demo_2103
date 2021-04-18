@@ -1,0 +1,90 @@
+.personal-container{
+    min-height: 625px;
+    background-color: #f9f9fc;
+    background: url('../IMG/login1.png') no-repeat;
+    background-size: 1520px 980px;
+    /* border: 1px red solid; */
+    position: relative;
+}
+
+.personal-g{
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 380px;
+    height: 350px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.personal-g>span{
+    display: block;
+    color: #fff;
+    line-height: 50px;
+    background-color: #5297f8;
+}
+.personal-f{
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    /* padding-right: 20px; */
+    /* border: 1px red solid; */
+}
+
+.personal-f input{
+    display: inline-block;
+    width: 250px;
+    height: 45px;
+    margin-bottom: 10px;
+    padding: 0 0 0 40px;
+    border: 0;
+    outline: none;
+    background-color: #f2f2f3;
+    font-size: 15px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+.personal-f>div{
+    text-align: center;
+    /* border: 1px red solid; */
+}
+.for-a,
+.for-p{    
+    display: inline-block;
+    width: 20px;
+    height: 25px;
+    position: absolute;
+    background: url('../IMG/spr_img.png') no-repeat;
+}
+.for-a{
+    left: 55px;
+    top: 20px;
+    background-position-y: -40px;
+}
+.for-p{
+    left: 55px;
+    top: 85px;
+    background-position-y: -80px;
+}
+.personal-btn{
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 50px 0 5px;
+    text-align: center;
+    line-height: 40px;
+    color: #fff;
+    background-color: #5297f8;
+}
+.personal-btn:hover{
+    background-color: #1b5cb6e8;
+}
+
+
+.personal-options>span:first-child{
+    float: left;
+    padding-left: 50px;
+}
