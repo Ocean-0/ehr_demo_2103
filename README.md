@@ -15,10 +15,10 @@
 
 ## 展示
 
-![首页]()
+![首页](https://github.com/Ocean-0/ehr_demo_2103/blob/main/src/IMG/rr%E9%A6%96%E9%A1%B5.png)
 
-![职位列表]()
+![职位列表](https://github.com/Ocean-0/ehr_demo_2103/blob/main/src/IMG/rr%E8%81%8C%E4%BD%8D%E5%88%97%E8%A1%A8.png)
 
-![了解百度]()
+![了解百度](https://github.com/Ocean-0/ehr_demo_2103/blob/main/src/IMG/rr%E4%BA%86%E8%A7%A3%E7%99%BE%E5%BA%A6.png)
 
-![登录]()
+![登录](https://github.com/Ocean-0/ehr_demo_2103/blob/main/src/IMG/rr%E7%99%BB%E5%BD%95.png)
