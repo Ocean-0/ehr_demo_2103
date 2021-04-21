@@ -14,7 +14,6 @@ class JobFilter extends Component {
         let choose = event.target.innerText;
         // 避免点击ul打印全部选项
         if(choose.length >= 10)return;
-        console.log('jobfilter getWorkPlace():',type,event.target.innerText);
         if(type === 'workp'){
             this.setState({
                 workPlace:choose,
@@ -25,8 +24,6 @@ class JobFilter extends Component {
                 station:(temp  == '工程')?'技术':temp,
             });
         };
-        // event.target.firstElementChild.addClass('selected');
-        // console.log(event.currentTarget.childNodes);
  
         for(let i = 0; i < event.currentTarget.childNodes.length; i++){
             event.currentTarget.childNodes[i].firstElementChild.style.background = '';
@@ -40,7 +37,6 @@ class JobFilter extends Component {
             this.setState({
                 station:this.props.location.station,
             })
-            console.log('jobFilter select: ',this.props.location.station);
         } 
     }
     render() {

@@ -9,13 +9,11 @@ class Museum extends Component {
     }
     myDebounce(fn, delay) {
         
-        console.log(this.props.location.pathname)
         var time = null;
         return function () {
             var context = this;
             var args = arguments;
             clearTimeout(time);
-            console.log("delay");
             time = setTimeout(function () {
                 fn.apply(context, args);
             }, delay);
@@ -25,13 +23,8 @@ class Museum extends Component {
         var winHeight = document.documentElement.scrollTop;
         var m1 = document.getElementsByClassName('museum-1-l')[0];
         var m2 = document.getElementsByClassName('museum-2-l')[0];
-        // var m3 = document.getElementsByClassName('museum-3-l')[0];
         var m3 = document.querySelectorAll('.museum-3-l span');
         console.log(winHeight);
-        // if(0 <= winHeight && winHeight < 260){
-        //     m1.style.opacity = 1;
-            
-        // }
         if(260 <= winHeight && winHeight < 870){
             if (m2 == null)return;
             m2.classList.remove('-fastLeftIn');
@@ -62,7 +55,6 @@ class Museum extends Component {
     
     componentDidMount() {
         console.log(this.props.location.pathname)
-        // window.onscroll = this.myDebounce(this.showAnimation, 500);
         window.onscroll = (this.props.location.pathname === '/museum')? this.myDebounce(this.showAnimation, 500):null;
         window.onscroll();
     }

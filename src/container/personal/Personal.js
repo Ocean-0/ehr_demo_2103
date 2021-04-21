@@ -3,9 +3,6 @@ import '../../CSS/Personal.css'
 import '../../CSS/Animation.css'
 
 class Personal extends Component{
-    // constructor(props){
-    //     super(props);
-    // }
     render(){
         return (
           <div className="personal-container">

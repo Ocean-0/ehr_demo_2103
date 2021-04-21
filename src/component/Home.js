@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import { Link } from 'react-router-dom';
-import CachedData from '../tools/CheckCache'
 import '../CSS/Home.css'
 import '../CSS/Animation.css'
 
@@ -20,10 +17,8 @@ class Home extends Component{
     getJob(e){
         if(e.charCode == 13){
             var input = document.getElementById('homeInput');
-            console.log('getJob:',input,input.value);
             var index = 0;
             index = this.getSameStr(this.state.keyWords,input.value);
-            console.log('result ',index);
             if(index == -1){                
                 input.classList.remove('-fadeinT');
                 // 01
@@ -54,19 +49,16 @@ class Home extends Component{
             switch(index){
                 case 0:
                     indexTemp = this.getSameStr(engineer.data,input.value);
-                    console.log(indexTemp,engineer.data[indexTemp]);
                     input.value = engineer.data[indexTemp];
                     this.props.history.push({pathname:'/jobList',station:'技术'});
                     break;
                 case 1:
                     indexTemp = this.getSameStr(product.data,input.value);
-                    console.log(indexTemp,product.data[indexTemp]);
                     input.value = product.data[indexTemp];
                     this.props.history.push({pathname:'/jobList',station:'产品'});
                     break;
                 case 2:
                     indexTemp = this.getSameStr(designer.data,input.value);
-                    console.log(indexTemp,designer.data[indexTemp]);
                     input.value = designer.data[indexTemp];
                     this.props.history.push({pathname:'/jobList',station:'设计'});
                     break;
@@ -78,7 +70,6 @@ class Home extends Component{
 
     }
     getSameStr(str,target){
-        console.log('begin1 ',str ,target);
         if(str.length == 0 || target.length == 0)return '';
         
         var maxLen = -1,index = -1;
@@ -92,7 +83,6 @@ class Home extends Component{
                     count++;
                 }
             }
-            console.log(count);
             if(count > maxLen){
                 if(count != 0){
                     index = j;
@@ -103,7 +93,6 @@ class Home extends Component{
         return index;
     }
     render(){
-        console.log(this.props)
         return (
             <div className="home-container">
                 <div>
