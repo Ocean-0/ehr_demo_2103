@@ -13,6 +13,8 @@
 
 [component](https://github.com/Ocean-0/ehr_demo_2103/tree/main/src/component)：包括流程动态、了解百度，以及页面基本构成的组件
 
+[api](https://github.com/Ocean-0/ehr_demo_2103/tree/main/src/api)：包括公共接口、请求封装模块
+
 ## 展示
 
 首页
