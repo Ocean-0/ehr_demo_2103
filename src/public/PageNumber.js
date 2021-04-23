@@ -42,7 +42,6 @@ class PageNumber extends Component{
                 <span>&nbsp;/&nbsp;{this.props.params.total}</span>
                 <span className="arrow-g arrow-l" onClick={this.turningPages.bind(this,'left')}></span>
                 <span className="arrow-g arrow-r" onClick={this.turningPages.bind(this,'right')}></span>
-
             </div>
         );
     }
