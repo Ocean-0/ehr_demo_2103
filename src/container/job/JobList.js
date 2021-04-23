@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Qs from 'qs';
-import { reqJobList } from '../../api/ReqApi'
-// import CachedData from '../../tools/CheckCache'
+import { reqJobList } from '../../public/api/ReqApi'
+import PageNumber from '../../public/PageNumber'
 import '../../CSS/Job.css'
 
 
@@ -11,28 +11,35 @@ class JobList extends Component {
         super(props);
         this.state = {
             jobData: [],
+            turnPage: {
+                page:1,
+                total:0,
+                num:5,
+            },
         }
         this.showJobDetail = this.showJobDetail.bind(this);
     }
     componentDidMount() {
+        console.log('jm01: ',this.state)
         reqJobList(Qs.stringify({
             workPlace: this.props.workPlace,
             station: this.props.station
         }), 'POST')
             .then((res) => {
-                console.log('jobList getData', res, res.data);
+                console.log('jobList getData', res, res.data, Math.ceil(res.data.length/this.state.turnPage.num));
                 this.setState({
                     jobData: res.data,
+                    turnPage: {
+                        page:1,
+                        total:Math.ceil(res.data.length/this.state.turnPage.num),
+                        num:5,
+                    },
                 });
+                console.log('jm02: ',this.state)
             })
             .catch((e) => {
                 console.log('网络错误,请重试', e)
             });
-
-        // axios.post('http://localhost:8081/getJobListPart', Qs.stringify({
-        //     workPlace: this.props.workPlace,
-        //     station: this.props.station
-        // }))
 
     }
     componentDidUpdate(nextProps,nextState) {
@@ -42,9 +49,13 @@ class JobList extends Component {
             station: this.props.station
         }), 'POST')
             .then((res) => {
-                console.log('jobList getData', res, res.data);
                 this.setState({
                     jobData: res.data,
+                    turnPage: {
+                        page:1,
+                        total:Math.ceil(res.data.length/this.state.turnPage.num),
+                        num:5,
+                    },
                 });
             })
             .catch(e => {
@@ -52,6 +63,11 @@ class JobList extends Component {
             });
 
     }
+    /**
+     * 展开隐藏列表
+     * @param {表行号} id 
+     * @param {*} event 
+     */
     showJobDetail(id, event) {
         var elementId = document.getElementById(id);
         var showEle = elementId.getAttribute("data-show");
@@ -63,11 +79,23 @@ class JobList extends Component {
             elementId.setAttribute("data-show", 'true');
         }
     }
+    /**
+     * 回调函数,由分页组件执行
+     * @param {分页数量} number 
+     */
+    changePage = (number) => {
+        this.setState({
+            page:number,
+            turnPage: {
+                page:1,
+                total:Math.ceil(this.state.jobData.length/this.state.turnPage.num),
+                num:5,
+            },
+        })
+    }
     render() {
         const { workPlace, station } = this.props;
         const { jobData } = this.state;
-        console.log('joblist:', workPlace, station, jobData.length);
-        console.log(jobData)
         let context = this;
         const dataList = jobData.length > 0 ? (
             jobData.map(function (d) {
@@ -113,6 +141,7 @@ class JobList extends Component {
                     <div><span>面试时间</span></div>
                 </div>
                 {dataList}
+                <PageNumber turn={this.changePage} params={this.state.turnPage}/>
             </div>
         )
     }

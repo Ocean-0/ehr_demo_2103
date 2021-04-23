@@ -1,0 +1,35 @@
+
+#page-container{
+    position: fixed;
+    height: 100px;
+    width: 50px;
+    right: 100px;
+    bottom: 100px;
+    text-align: center;    
+    /* border: 1px red solid;  */
+}
+#page-container>input{
+    box-sizing: border-box;
+    width: 20px;
+    border-radius: 5px;
+    text-align: center;
+    outline: none;
+    border: 1px rgb(158, 157, 157) solid;
+}
+
+.arrow-g{    
+    display: inline-block;
+    background-image: url('../IMG/arrow-down_25x25.png');
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+}
+.arrow-g:hover{
+    background-color: #fff;
+}  
+.arrow-l{
+    transform: rotate(90deg);
+}
+.arrow-r{
+    transform: rotate(-90deg);
+}
