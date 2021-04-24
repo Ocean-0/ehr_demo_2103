@@ -15,6 +15,13 @@ class PageNumber extends Component{
             total: this.props.params.total
         })
     }
+    shouldComponentUpdate(nextProps,nextState){
+        console.log(nextProps)
+        if(nextProps.total == 0){
+            return false;
+        }
+        return true;
+    }
     /**
      * 回调父组件changePage()，修改父组件状态
      * @param {翻页方向} param 
