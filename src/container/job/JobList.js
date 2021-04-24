@@ -103,7 +103,7 @@ class JobList extends Component {
         try{
             console.log(arr)
             let index = 0;
-            let newArr = [];
+            let newArr = new Array();
             let len = arr.length - 1;
             while(index < len){
                 newArr.push(arr.slice(index, index += num));
@@ -115,16 +115,24 @@ class JobList extends Component {
         }
     }
     render() {
-        const { workPlace, station } = this.props;
+        // 测试
         // const { jobData } = this.state;
-        // console.log(this.splitArr(this.state.jobData,this.state.turnPage.num)[this.state.turnPage.page - 1])       
+        const data1 = this.splitArr(this.state.jobData,this.state.turnPage.num)[this.state.turnPage.page - 1];
+        // console.log("data1",data1.length);    
+        for(var index in data1){
+            console.log(index,data1[index],data1.length)
+        }   
+        // var newArr = data1.map(function(d){
+        //     return d;
+        // })
+        // console.log(newArr)
+
+        const { workPlace, station } = this.props;
         const { jobData } = this.state;
-        // let tempData = Array.from(jobData[this.state.turnPage.page - 1])
-        console.log("check check",jobData)
-        // let tempJobData = jobData['0'];
+        console.log("check ",data1,data1 instanceof Array)
         let context = this;
         const dataList = jobData.length > 0 ? (
-            jobData.map(function (d) {
+            jobData.map(function (d) {                
                 let duty = d.duty;
                 let requirement = d.requirement;
                 return (
