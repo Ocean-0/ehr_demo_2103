@@ -12,39 +12,39 @@ class JobList extends Component {
         this.state = {
             jobData: [],
             turnPage: {
-                page:1,
-                total:0,
-                num:5,
+                page: 1,
+                total: 0,
+                num: 5,
             },
         }
         this.showJobDetail = this.showJobDetail.bind(this);
     }
     componentDidMount() {
-        console.log('jm01: ',this.state)
+        console.log('jm01: ', this.state)
         reqJobList(Qs.stringify({
             workPlace: this.props.workPlace,
             station: this.props.station
         }), 'POST')
             .then((res) => {
-                console.log('jobList getData', res, res.data, Math.ceil(res.data.length/this.state.turnPage.num));
+                console.log('jobList getData', res, res.data, Math.ceil(res.data.length / this.state.turnPage.num));
                 this.setState({
                     jobData: res.data,
                     // jobData: this.splitArr(res.data,this.state.turnPage.num),
                     turnPage: {
-                        page:1,
-                        total:Math.ceil(res.data.length/this.state.turnPage.num),
-                        num:5,
+                        page: 1,
+                        total: Math.ceil(res.data.length / this.state.turnPage.num),
+                        num: 5,
                     },
                 });
-                console.log('jm02: ',this.state)
+                console.log('jm02: ', this.state)
             })
             .catch((e) => {
                 console.log('网络错误,请重试', e)
             });
 
     }
-    componentDidUpdate(nextProps,nextState) {
-        if(nextProps == this.props)return;
+    componentDidUpdate(nextProps, nextState) {
+        if (nextProps == this.props) return;
         reqJobList(Qs.stringify({
             workPlace: this.props.workPlace,
             station: this.props.station
@@ -54,9 +54,9 @@ class JobList extends Component {
                     jobData: res.data,
                     // jobData: this.splitArr(res.data,this.state.turnPage.num),
                     turnPage: {
-                        page:1,
-                        total:Math.ceil(res.data.length/this.state.turnPage.num),
-                        num:5,
+                        page: 1,
+                        total: Math.ceil(res.data.length / this.state.turnPage.num),
+                        num: 5,
                     },
                 });
             })
@@ -87,11 +87,11 @@ class JobList extends Component {
      */
     changePage = (number) => {
         this.setState({
-            page:number,
+            page: number,
             turnPage: {
-                page:1,
-                total:Math.ceil(this.state.jobData.length/this.state.turnPage.num),
-                num:5,
+                page: 1,
+                total: Math.ceil(this.state.jobData.length / this.state.turnPage.num),
+                num: 5,
             },
         })
     }
@@ -99,29 +99,46 @@ class JobList extends Component {
      * 将data分割多个部分
      * @param {每组数量} number 
      */
-    splitArr = (arr,num) => {
-        try{
+    splitArr = (arr, num) => {
+        try {
             console.log(arr)
             let index = 0;
             let newArr = new Array();
             let len = arr.length - 1;
-            while(index < len){
+            while (index < len) {
                 newArr.push(arr.slice(index, index += num));
             }
             console.log(newArr)
             return newArr;
-        }catch(e){
+        } catch (e) {
             console.error('网络错误，请重试', e)
         }
     }
+    getPropertyCount(o) {
+        var n, count = 0;
+        for (n in o) {
+            if (o.hasOwnProperty(n)) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     render() {
         // 测试
-        // const { jobData } = this.state;
-        const data1 = this.splitArr(this.state.jobData,this.state.turnPage.num)[this.state.turnPage.page - 1];
-        // console.log("data1",data1.length);    
-        for(var index in data1){
-            console.log(index,data1[index],data1.length)
-        }   
+        const data1 = this.splitArr(this.state.jobData, this.state.turnPage.num)[this.state.turnPage.page - 1];
+
+        // 不能访问length
+        // console.log("data1",data1.length); 
+        
+        // 能访问Length
+        for (var index in data1) {
+            console.log(index, data1[index], data1.length)
+        }
+
+        console.log('计算length',this.getPropertyCount(data1))
+
+        // data1显示undefined
         // var newArr = data1.map(function(d){
         //     return d;
         // })
@@ -129,10 +146,10 @@ class JobList extends Component {
 
         const { workPlace, station } = this.props;
         const { jobData } = this.state;
-        console.log("check ",data1,data1 instanceof Array)
+        console.log("check ", data1, data1 instanceof Array)
         let context = this;
         const dataList = jobData.length > 0 ? (
-            jobData.map(function (d) {                
+            jobData.map(function (d) {
                 let duty = d.duty;
                 let requirement = d.requirement;
                 return (
@@ -175,7 +192,7 @@ class JobList extends Component {
                     <div><span>面试时间</span></div>
                 </div>
                 {dataList}
-                <PageNumber turn={this.changePage} params={this.state.turnPage}/>
+                <PageNumber turn={this.changePage} params={this.state.turnPage} />
             </div>
         )
     }
