@@ -114,6 +114,19 @@ class JobList extends Component {
             console.error('网络错误，请重试', e)
         }
     }
+    sliceArray(array, size) {
+        var result = [];
+        var len = Math.ceil(array.length / size);
+        for (var x = 0; x < len; x++) {
+            var start = x * size;
+            var end = start + size;
+            result.push(array.slice(start, end));
+        }
+        return result;
+    }
+    changeArray(obj){
+        return Array.from ? Array.from(obj) : [].slice.call(obj);
+    }
     getPropertyCount(o) {
         var n, count = 0;
         for (n in o) {
@@ -125,18 +138,18 @@ class JobList extends Component {
     }
 
     render() {
-        // 测试
+        // 测试01
         const data1 = this.splitArr(this.state.jobData, this.state.turnPage.num)[this.state.turnPage.page - 1];
+        const data2 = this.sliceArray(this.state.jobData, this.state.turnPage.num)[this.state.turnPage.page - 1];
 
         // 不能访问length
+        console.log("data1",data1,data2); 
         // console.log("data1",data1.length); 
         
         // 能访问Length
-        for (var index in data1) {
-            console.log(index, data1[index], data1.length)
-        }
-
-        console.log('计算length',this.getPropertyCount(data1))
+        // for (var index in data1) {
+        //     console.log(index, data1[index], data1.length)
+        // }
 
         // data1显示undefined
         // var newArr = data1.map(function(d){
@@ -146,7 +159,11 @@ class JobList extends Component {
 
         const { workPlace, station } = this.props;
         const { jobData } = this.state;
-        console.log("check ", data1, data1 instanceof Array)
+
+        // 测试02
+        // var begin = (this.state.turnPage.page - 1) * this.state.turnPage.num;
+        // console.log(jobData.splice(begin, begin + this.state.turnPage.num),begin,this.state.turnPage.num);
+
         let context = this;
         const dataList = jobData.length > 0 ? (
             jobData.map(function (d) {
