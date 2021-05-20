@@ -1,13 +1,15 @@
 .home-container{
     min-height: 665px;
     background-color: #f9f9fc;
-    background: url('../IMG/arrows-bg.jpg') no-repeat;
+    background: url('../IMG/arrows-bg.jpg') no-repeat center top;
     background-size: 1520px 990px;
     /* border: 1px red solid; */
 }
 .home-container>div{
     height: 100px;
     text-align: center;
+    display: flex;
+    justify-content: center;
     /* margin-top: 300px; */
     /* border: 1px red solid; */
 
